@@ -1,0 +1,249 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #0a0202;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.main-container {
+    background: #FFFFFF;
+    padding: 20px;
+    width: 100vw;
+}
+
+/* Navbar */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+}
+
+.logo img {
+    width: 150px;
+    height: 70px;
+}
+
+.search-form input {
+    padding: 10px 15px;
+    border: 1px solid #E5E7EB;
+    border-radius: 50px;
+}
+
+/* Job Offers Button */
+.jobs {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.jobs::after {
+    font-size: 12px;
+    margin-left: 8px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Content Grid */
+.content {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 10px;
+    text-align: center;
+}
+
+/* Cards */
+.card {
+    position: relative;
+    background-color: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+a {
+    color: white;         /* Makes the text white */
+    text-decoration: none; /* Removes underline */
+    font-weight: normal;   /* Keeps it looking like normal text */
+}
+
+
+/* Image Fix */
+.card img {
+    width: 100%;
+    max-width: 180px;
+    height: 80%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.register-btn {
+    position: absolute;
+    bottom: 15%; /* Centers it over the title */
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 100%;
+    background: #E5E7EB;
+    color: #6544ea;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+}
+
+
+
+.btn {
+    display: none;
+}
+/* On desktop: Show register button when hovering */
+@media (hover: hover) {
+    .card:hover h4 {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .card:hover .register-btn {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header {
+        flex-direction: row;
+    }
+
+    .search-form input {
+        width: 200px;
+    }
+    .btn {
+        display: block;
+        width: 100px;
+    };  
+
+    .btn {
+        display: block;
+        display: flex;
+        justify-content: center;  /* Center horizontally */
+        align-items: center;  /* Center vertically */
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;  /* Add margin to separate it */
+    }
+    
+    .regit {
+        width: 100vw;
+        max-width: 700px;
+        padding: 10px 30px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background-color: #6544ea;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-left: 10px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .header {
+        padding-top: 0;
+        margin-top: -20px;
+        flex-direction: column;
+        font-size: 14px;
+    }
+    .jobs {
+        font-size: 14px;
+        padding-bottom: 10px;
+    }
+    .search-form input {
+        margin: 0;
+        padding-top: 15px;
+        padding: 5px 10px;
+        border: 1px solid #E5E7EB;
+        border-radius: 50px;
+    }
+ 
+    .btn {
+        display: block;
+        display: flex;
+        justify-content: center;  /* Center horizontally */
+        align-items: center;  /* Center vertically */
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;  /* Add margin to separate it */
+    }
+    
+    .regit {
+        width: 80vw;
+        max-width: 300px;
+        padding: 10px 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background-color: #6544ea;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    
+    /* Ensure it's visible */
+    
+}
