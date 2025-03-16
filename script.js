@@ -3,6 +3,7 @@
         
         form.addEventListener("submit", function(event) {
             event.preventDefault(); 
+            
             let fName = document.getElementById("fname");
             let lName = document.getElementById("lname");
             let uName = document.getElementById("username");
@@ -19,7 +20,17 @@
             let content = document.querySelector(".container");
             content.innerHTML = `Your name is: ${fName.value} ${lName.value}, <br> Your UserName is: ${uName.value}, <br> Your date of birth is ${birthDate.value}, <br> Your Email is ${email.value}, <br> Your Password is ${passWord.value}. <br><br><br><br> Are your details correct? <input type="submit" value="YES"> <input type="submit" value="NO"> ` 
             
- 
+            
+            let hiddenDiv = document.querySelector(".hide");
+            hiddenDiv.style.display = "block";
+        
+            // card.addEventListener("mouseover", function () {
+            //     hiddenDiv.style.display = "block"; // Show button on hover
+            // });
+        
+            // card.addEventListener("mouseleave", function () {
+            //     hiddenDiv.style.display = "none"; // Hide button when mouse leaves
+            // });
             // let myElm = document.createElement("p");	// Create a new element
 
             // myElm.innerText = 'YOU HAVE BEEN REGISTERED!';		// Change the text of the element
@@ -33,6 +44,18 @@
 
             
             //alert("First Name: " + name);
+        });
+
+        document.querySelectorAll(".hide").forEach((card) => {
+            let hiddenDiv = card.querySelector(".hide");
+        
+            card.addEventListener("mouseover", function () {
+                hiddenDiv.style.display = "block"; // Show button on hover
+            });
+        
+            card.addEventListener("mouseleave", function () {
+                hiddenDiv.style.display = "none"; // Hide button when mouse leaves
+            });
         });
 
 
