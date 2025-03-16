@@ -17,7 +17,7 @@
             h1.style.display = "block";
 
             let content = document.querySelector(".container");
-            content.innerHTML = `Your name is: ${fName.value} ${lName.value}, <br> Your UserName is: ${uName.value}, <br> Your date of birth is ${birthDate.value}, <br> Your Email is ${email.value}, <br> Your Password is ${passWord.value}.` 
+            content.innerHTML = `Your name is: ${fName.value} ${lName.value}, <br> Your UserName is: ${uName.value}, <br> Your date of birth is ${birthDate.value}, <br> Your Email is ${email.value}, <br> Your Password is ${passWord.value}. <br><br><br><br> Are your details correct? <input type="submit" value="YES"> <input type="submit" value="NO"> ` 
             
  
             // let myElm = document.createElement("p");	// Create a new element
