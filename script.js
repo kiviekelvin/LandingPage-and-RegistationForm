@@ -11,18 +11,28 @@
             let passWord = document.getElementById("password");
             let email = document.getElementById("email");
 
-            let fullName = fName.value + " " + lName.value;
             
             let h1 = document.querySelector("h1");
             h1.innerText = `Welcome ${fName.value} ${lName.value} `;
             h1.style.display = "block";
 
             let content = document.querySelector(".container");
-            content.innerHTML = `Your name is: ${fName.value} ${lName.value}, <br> Your UserName is: ${uName.value}, <br> Your date of birth is ${birthDate.value}, <br> Your Email is ${email.value}, <br> Your Password is ${passWord.value}. <br><br><br><br> Are your details correct? <input type="submit" value="YES"> <input type="submit" value="NO"> ` 
+            content.innerHTML = `Your name is: ${fName.value} ${lName.value}, <br> Your UserName is: ${uName.value}, <br> Your date of birth is ${birthDate.value}, <br> Your Email is ${email.value}, <br> Your Password is ${passWord.value}. 
+            <br><br><br><br> Are your details correct?        <button class="regit yes">Yes </button>
+            <button class="regit"> <a href="register.html">No</a> </button>`
+
+            
             
             
             let hiddenDiv = document.querySelector(".hide");
             hiddenDiv.style.display = "block";
+
+            let confirmed = document.querySelector(".yes");
+
+            confirmed.addEventListener("click", function()   {
+                content.innerHTML = `CONGRATS, You have been registered successfully!`;
+            })
+
         
             // card.addEventListener("mouseover", function () {
             //     hiddenDiv.style.display = "block"; // Show button on hover
