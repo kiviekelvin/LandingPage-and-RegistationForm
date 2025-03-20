@@ -15,69 +15,75 @@
             <div class="logo">
                 <img src="images/images.png" alt="Logo">
             </div>
-            <button class="jobs">Job Offers ▼</button>
+            <!-- <label for="menu">Job Offers ▼</label> -->
+            <select name="jobs" id="menu" onchange="navigateToFilter()">
+                <option value="all">Show All</option>
+                <option value="full-time">Full-Time</option>
+                <option value="part-time">Part-Time</option>
+            </select>
+            <!-- <button class="jobs">Job Offers ▼</button> -->
             <form class="search-form">
                 <input type="search" name="q" placeholder="Search...">
             </form>
         </header>
 
         <div class="content">
-            <div class="card">
+            <div class="card" data-type="full-time">
                 <img src="images/undraw_job-offers_55y0.svg" alt="DevOps">
                 <h4>DevOps</h4>
                 <a href="register.html" class="register-btn">Register</a>
             </div>
-            <div class="card">
+            <div class="card" data-type="full-time">
                 <img src="images/undraw_resume_jrgi.svg" alt="IT Support">
                 <h4>IT Support</h4>
                 <a href="register.html" class="register-btn">Register</a>
             </div>
-            <div class="card">
+            <div class="card" data-type="part-time">
                 <img src="images/undraw_portfolio_btd8.svg" alt="UI/UX Design">
                 <h4>UI/UX Design</h4>
                 <a href="register.html" class="register-btn">Register</a>
             </div>
-            <div class="card">
+            <div class="card" data-type="full-time">
                 <img src="images/undraw_online-resume_z4sp.svg" alt="FrontEnd Development">
                 <h4>FrontEnd Development</h4>
                 <a href="register.html" class="register-btn">Register</a>
             </div>
-            <div class="card">
+            <div class="card" data-type="full-time">
                 <img src="images/undraw_multitasking_5lw1.svg" alt="Product Management">
                 <h4>Product Management</h4>
                 <a href="register.html" class="register-btn">Register</a>
             </div>
-            <div class="card">
+            <div class="card" data-type="part-time">
                 <img src="images/undraw_job-hunt_5umi.svg" alt="Copy Writing">
                 <h4>Copy Writing</h4>
                 <a href="register.html" class="register-btn">Register</a>
             </div>
-            <div class="card">
+            <div class="card" data-type="full-time">
                 <img src="images/undraw_career-progress_vfq5.svg" alt="Digital Marketing">
                 <h4>Digital Marketing</h4>
                 <a href="register.html" class="register-btn">Register</a>
             </div>
-            <div class="card">
+            <div class="card" data-type="full-time">
                 <img src="images/undraw_feeling-proud_tdos.svg" alt="Data Science">
                 <h4>Data Science</h4>
                 <a href="register.html" class="register-btn">Register</a>
             </div>
-            <div class="card">
+            <div class="card" data-type="part-time">
                 <img src="images/undraw_files-sent_o4sc.svg" alt="Data Analyst">
                 <h4>Data Analyst</h4>
                 <a href="register.html" class="register-btn">Register</a>
             </div>
-            <div class="card">
+            <div class="card" data-type="full-time">
                 <img src="images/undraw_interview_yz52.svg" alt="Admin">
                 <h4>Admin</h4>
                 <a href="register.html" class="register-btn">Register</a>
             </div>
-            <div class="card">
+            <div class="card" data-type="full-time">
                 <img src="images/undraw_team-page_q5am.svg" alt="Web Design">
                 <h4>Web Design</h4>
                 <a href="register.html" class="register-btn">Register</a>
             </div>
-            <div class="card">
+            <div class="card" data-type="part-time">
                 <img src="images/undraw_services_dhxj.svg" alt="BackEnd Development">
                 <h4>BackEnd Development</h4>
                 <a href="register.html" class="register-btn">Register</a>

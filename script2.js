@@ -64,6 +64,39 @@ document.querySelectorAll(".card").forEach((card) => {
         registerBtn.style.display = "none"; // Hide button when mouse leaves
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const jobType = urlParams.get("type");
+
+    if (jobType) {
+        // Select all job cards
+        document.querySelectorAll(".card").forEach((card) => {
+            // Get job type from data-type attribute
+            const cardType = card.getAttribute("data-type");
+
+            // Show only the selected job type, hide others
+            if (cardType !== jobType) {
+                card.style.display = "none";
+            } else {
+                card.style.display = "block";
+            }
+        });
+    }
+});
+
+function navigateToFilter() {
+    let selectedValue = document.getElementById("menu").value;
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        if (selectedValue === "all" || card.getAttribute("data-type") === selectedValue) {
+            card.style.display = "block";  // Show the matching cards
+        } else {
+            card.style.display = "none";   // Hide non-matching cards
+        }
+    });
+}
 
 // ddocument.addEventListener("DOMContentLoaded", function () {
 //     const cards = document.querySelectorAll(".card");

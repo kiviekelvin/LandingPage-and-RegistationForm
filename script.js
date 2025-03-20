@@ -1,72 +1,53 @@
-        let form = document.querySelector("#fullform");
+document.querySelector("#fullform").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-        
-        form.addEventListener("submit", function(event) {
-            event.preventDefault(); 
-            
-            let fName = document.getElementById("fname");
-            let lName = document.getElementById("lname");
-            let uName = document.getElementById("username");
-            let birthDate = document.getElementById("dob");
-            let passWord = document.getElementById("password");
-            let email = document.getElementById("email");
+    let fName = document.getElementById("fname").value;
+    let lName = document.getElementById("lname").value;
+    let uName = document.getElementById("username").value;
+    let birthDate = document.getElementById("dob").value;
+    let passWord = document.getElementById("password").value;
+    let email = document.getElementById("email").value;
 
-            
-            let h1 = document.querySelector("h1");
-            h1.innerText = `Welcome ${fName.value} ${lName.value} `;
-            h1.style.display = "block";
+    // Store the selected value BEFORE modifying the DOM
+    let partTimeSelected = document.getElementById("part-time").checked;
+    let fullTimeSelected = document.getElementById("full-time").checked;
 
-            let content = document.querySelector(".container");
-            content.innerHTML = `Your name is: ${fName.value} ${lName.value}, <br> Your UserName is: ${uName.value}, <br> Your date of birth is ${birthDate.value}, <br> Your Email is ${email.value}, <br> Your Password is ${passWord.value}. 
-            <br><br><br><br> Are your details correct?        <button class="regit yes">Yes </button>
-            <button class="regit"> <a href="register.html">No</a> </button>`
-
-            
-            
-            
-            let hiddenDiv = document.querySelector(".hide");
-            hiddenDiv.style.display = "block";
-
-            let confirmed = document.querySelector(".yes");
-
-            confirmed.addEventListener("click", function()   {
-                content.innerHTML = `CONGRATS, You have been registered successfully!`;
-            })
-
-        
-            // card.addEventListener("mouseover", function () {
-            //     hiddenDiv.style.display = "block"; // Show button on hover
-            // });
-        
-            // card.addEventListener("mouseleave", function () {
-            //     hiddenDiv.style.display = "none"; // Hide button when mouse leaves
-            // });
-            // let myElm = document.createElement("p");	// Create a new element
-
-            // myElm.innerText = 'YOU HAVE BEEN REGISTERED!';		// Change the text of the element
-            // myElm.style.color = 'red';		// Change the text color of the element
-
-            // document.body.appendChild(myElm);
-            // let newElm = document.createElement("p");
-            // newElm.innerText = 'YOU HAVE BEEN REGISTERED!';
-            // document.body.appendChild(newElm);
+    let hiddenDiv = document.querySelector(".hide");
+    hiddenDiv.style.display = "block";
 
 
-            
-            //alert("First Name: " + name);
-        });
+    let h1 = document.querySelector("h1");
+    h1.innerText = `Welcome ${fName} ${lName} `;
+    h1.style.display = "block";
 
-        document.querySelectorAll(".hide").forEach((card) => {
-            let hiddenDiv = card.querySelector(".hide");
-        
-            card.addEventListener("mouseover", function () {
-                hiddenDiv.style.display = "block"; // Show button on hover
+    let content = document.querySelector(".container");
+
+    // Use the stored values 
+    content.innerHTML = `
+        <p>Your name is: ${fName} ${lName}</p>
+        <p>Your Username is: ${uName}</p>
+        <p>Your date of birth is: ${birthDate}</p>
+        <p>Your Email is: ${email}</p>
+        <p>Your Password is: ${passWord}</p>
+        <br>
+        <p>Are your details correct?</p>
+        <button class="regit yes">Yes</button>
+        <button class="regit no"><a href="register.html">No</a></button>
+    `;
+
+    setTimeout(() => {
+        let confirmed = document.querySelector(".yes");
+
+        if (confirmed) {
+            confirmed.addEventListener("click", function () {
+                if (partTimeSelected) {
+                    window.location.href = "index.html?type=part-time";
+                } else if (fullTimeSelected) {
+                    window.location.href = "index.html?type=full-time";
+                } else {
+                    alert("Please select Part-Time or Full-Time before proceeding.");
+                }
             });
-        
-            card.addEventListener("mouseleave", function () {
-                hiddenDiv.style.display = "none"; // Hide button when mouse leaves
-            });
-        });
-
-
-
+        }
+    }, 100);
+});
