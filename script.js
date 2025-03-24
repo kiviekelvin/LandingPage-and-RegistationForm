@@ -46,6 +46,7 @@ document.querySelector("#fullform").addEventListener("submit", function (event) 
                     window.location.href = "index.html?type=full-time";
                 } else {
                     alert("Please select Part-Time or Full-Time before proceeding.");
+                    location.reload();
                 }
             });
         }
